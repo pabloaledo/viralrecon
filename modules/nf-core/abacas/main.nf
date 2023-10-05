@@ -2,7 +2,7 @@ process ABACAS {
     tag "$meta.id"
     label 'process_medium'
 
-    conda "bioconda::abacas=1.3.1"
+    conda "bioconda::abacas=1.3.1 conda-forge::python=3.9.5"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/abacas:1.3.1--pl526_0' :
         'quay.io/biocontainers/abacas:1.3.1--pl526_0' }"
