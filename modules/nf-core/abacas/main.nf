@@ -2,7 +2,7 @@ process ABACAS {
     tag "$meta.id"
     label 'process_medium'
 
-    conda "bioconda::abacas=1.3.1 conda-forge::python=3.9.5"
+    conda "bioconda::abacas=1.3.1 conda-forge::python=3.9.5 conda-forge::procps-ng"
 
     input:
     tuple val(meta), path(scaffold)
